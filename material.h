@@ -55,6 +55,7 @@ private:
 
 };
 
+//电介质材料，有折射
 class dielectric : public material {
 public:
     dielectric(double index_of_refraction) : ir(index_of_refraction) {}

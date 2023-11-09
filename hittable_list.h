@@ -29,7 +29,7 @@ public:
         bool hit_anything = false;
         auto closest_so_far = ray_t.max;
 
-        for (const auto& object : objects) {
+        for (const auto& object : objects) {//这里objects只有一个元素，为bvh数的根节点，也就是说，下面的object->hit调用的是bvh_node类的hit函数
             if (object->hit(r, interval(ray_t.min, closest_so_far), temp_rec)) {
                 hit_anything = true;
                 closest_so_far = temp_rec.t;
